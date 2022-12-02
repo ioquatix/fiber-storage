@@ -4,7 +4,7 @@ require_relative "lib/fiber/storage/version"
 
 Gem::Specification.new do |spec|
 	spec.name = "fiber-storage"
-	spec.version = Storage::VERSION
+	spec.version = Fiber::Storage::VERSION
 	
 	spec.summary = "Provides a compatibility shim for fiber storage."
 	spec.authors = ["Samuel Williams"]
