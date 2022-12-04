@@ -1,6 +1,6 @@
 # Fiber::Storage
 
-This gem provides a shim for `Fiber.[]`, `Fiber.[]=`, `Fiber#storage`, `Fiber#storage=`.
+This gem provides a shim for `Fiber.[]`, `Fiber.[]=`, `Fiber#storage`, `Fiber#storage=`, which was introduced in Ruby 3.2.
 
 ## Motivation
 
