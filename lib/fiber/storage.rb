@@ -20,10 +20,12 @@ class Fiber
 			super(*arguments, **options, &block)
 		end
 
+		# Set the storage associated with this fiber, clearing any previous storage.
 		def storage=(hash)
 			@storage = hash.dup
 		end
 		
+		# The storage associated with this fiber.
 		def storage
 			@storage.dup
 		end
@@ -37,10 +39,12 @@ class Fiber
 		warn "Fiber#storage is running in compatibility mode."
 		prepend Storage
 		
+		# Get a value from the current fiber's storage.
 		def self.[] key
 			self.current.__storage__[key]
 		end
 		
+		# Set a value in the current fiber's storage.
 		def self.[]= key, value
 			self.current.__storage__[key] = value
 		end

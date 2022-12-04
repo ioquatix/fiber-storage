@@ -8,21 +8,6 @@ Ruby 3.2 introduces inheritable fiber storage for per-request or per-operation s
 
 Notably, it does not support inheritance across threads or lazy Enumerator. This is a limitation of the shim implementation.
 
-## Installation
-
-Add the gem to your project:
-
-```shell
-$ bundle add fiber-storage
-```
-
 ## Usage
 
-```ruby
-require 'fiber/storage'
-
-Fiber[:x] = 10
-Fiber.new do
-	Fiber[:x] # => 10
-end.resume
-```
+See the [project documentation](https://ioquatix.github.io/fiber-storage).
