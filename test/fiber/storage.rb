@@ -39,4 +39,11 @@ describe Fiber do
 			expect(Fiber[:foo]).to be == :baz
 		end.resume
 	end
+	
+	it "can assign to storage" do
+		Fiber.new do
+			Fiber.current.storage = {foo: :bar}
+			expect(Fiber[:foo]).to be == :bar
+		end.resume
+	end
 end
