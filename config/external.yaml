@@ -1,0 +1,3 @@
+console:
+  url: https://github.com/socketry/console
+  command: bundle exec bake test

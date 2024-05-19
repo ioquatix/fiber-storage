@@ -13,13 +13,15 @@ Gem::Specification.new do |spec|
 	spec.cert_chain  = ['release.cert']
 	spec.signing_key = File.expand_path('~/.gem/release.pem')
 	
-	spec.homepage = "https://github.com/socketry/fiber-storage"
+	spec.homepage = "https://github.com/ioquatix/fiber-storage"
+	
+	spec.metadata = {
+		"documentation_uri" => "https://ioquatix.github.io/fiber-storage/",
+		"funding_uri" => "https://github.com/sponsors/ioquatix/",
+		"source_code_uri" => "https://github.com/ioquatix/fiber-storage.git",
+	}
 	
 	spec.files = Dir.glob(['{lib}/**/*', '*.md'], File::FNM_DOTMATCH, base: __dir__)
 	
-	spec.required_ruby_version = ">= 2.7.0"
-	
-	spec.add_development_dependency "bundler"
-	spec.add_development_dependency "covered"
-	spec.add_development_dependency "sus"
+	spec.required_ruby_version = ">= 2.7"
 end
