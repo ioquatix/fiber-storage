@@ -36,7 +36,6 @@ class Fiber
 	end
 	
 	unless Fiber.current.respond_to?(:storage)
-		warn "Fiber#storage is missing and being monkey-patched."
 		prepend Storage
 		
 		# Get a value from the current fiber's storage.
@@ -76,7 +75,6 @@ class Fiber
 				end
 			end
 			
-			warn "Fiber#storage has borked keys and is being monkey-patched."
 			singleton_class.prepend FixBorkedKeys
 		end
 	end
