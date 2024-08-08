@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
 	spec.homepage = "https://github.com/ioquatix/fiber-storage"
 	
 	spec.metadata = {
+		"homepage_uri" => spec.homepage,
 		"documentation_uri" => "https://ioquatix.github.io/fiber-storage/",
 		"funding_uri" => "https://github.com/sponsors/ioquatix/",
 		"source_code_uri" => "https://github.com/ioquatix/fiber-storage.git",
