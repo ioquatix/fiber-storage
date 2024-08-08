@@ -5,8 +5,11 @@
 
 require 'fiber'
 
+# @namespace
 class Fiber
+	# Provides compatibility shims for fiber storage.
 	module Storage
+		# Initialize the fiber with the given storage.
 		def initialize(*arguments, storage: true, **options, &block)
 			case storage
 			when true
@@ -30,6 +33,7 @@ class Fiber
 			@storage.dup
 		end
 		
+		# @private
 		def __storage__
 			@storage ||= {}
 		end
@@ -52,6 +56,7 @@ class Fiber
 			self.current.__storage__[key] = value
 		end
 	else
+		# Whether the fiber storage has buggy keys. Unfortunately the original implementation of fiber storage was broken, this method detects the bug and is used to apply a fix.
 		def self.__borked_keys__
 			!Fiber.new do
 				key = :"#{self.object_id}.key"
@@ -61,13 +66,16 @@ class Fiber
 		end
 		
 		if __borked_keys__
+			# This is a fix for the original implementation of fiber storage which incorrectly handled non-dynamic symbol keys.
 			module FixBorkedKeys
+				# Lookup the value for the key, ensuring the symbol is dynamic.
 				def [](key)
 					raise TypeError, "Key must be symbol!" unless key.is_a?(Symbol)
 					
 					super(eval(key.inspect))
 				end
 				
+				# Assign the value to the key, ensuring the symbol is dynamic.
 				def []=(key, value)
 					raise TypeError, "Key must be symbol!" unless key.is_a?(Symbol)
 					
