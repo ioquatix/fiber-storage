@@ -16,6 +16,10 @@ Please see the [project documentation](https://ioquatix.github.io/fiber-storage/
 
   - [Getting Started](https://ioquatix.github.io/fiber-storage/guides/getting-started/index) - This guide explains how to use this gem and provides a brief overview of the features.
 
+## Releases
+
+There are no documented releases.
+
 ## Contributing
 
 We welcome contributions to this project.
