@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 # Released under the MIT License.
-# Copyright, 2022-2023, by Samuel Williams.
+# Copyright, 2022-2025, by Samuel Williams.
 
-require 'fiber/storage'
+require "fiber/storage"
 
 describe Fiber do
 	it "should be able to store data" do
@@ -58,7 +58,7 @@ describe Fiber do
 	
 	it "can't use non-symbol keys" do
 		expect do
-			Fiber["key"] = :value
+			Fiber[1] = :value
 		end.to raise_exception(TypeError)
 	end
 	
