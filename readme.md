@@ -18,7 +18,11 @@ Please see the [project documentation](https://ioquatix.github.io/fiber-storage/
 
 ## Releases
 
-There are no documented releases.
+Please see the [project releases](https://ioquatix.github.io/fiber-storage/releases/index) for all releases.
+
+### v1.0.1
+
+  - Fix test suite incompatibiltiies with Ruby 3.4+.
 
 ## Contributing
 
