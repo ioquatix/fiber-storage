@@ -65,7 +65,8 @@ class Fiber
 			end.resume
 		end
 		
-		if __borked_keys__
+		# Spinel's Fiber storage is its own, without the key bug this works around.
+		if RUBY_ENGINE != "spinel" && __borked_keys__
 			# This is a fix for the original implementation of fiber storage which incorrectly handled non-dynamic symbol keys.
 			module FixBorkedKeys
 				# Lookup the value for the key, ensuring the symbol is dynamic.
